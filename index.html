@@ -3,7 +3,56 @@
 <html lang="en">
 
 <head>
+<style>
 
+/* Navbar */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:#020617;
+padding:15px 0;
+z-index:1000;
+}
+
+.nav-container{
+width:85%;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.nav-logo a{
+color:#00ff9c;
+font-size:22px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.nav-menu{
+list-style:none;
+display:flex;
+gap:25px;
+}
+
+.nav-menu a{
+text-decoration:none;
+color:white;
+font-size:16px;
+transition:0.3s;
+}
+
+.nav-menu a:hover{
+color:#00ff9c;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -131,18 +180,23 @@ background:#020617;
 
 <body>
 
-<!-- NAVBAR -->
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="nav-container">
 
-<nav>
+    <div class="nav-logo">
+      <a href="#">Kiran</a>
+    </div>
 
-<div><b>Kiran</b></div>
+    <ul class="nav-menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-<div>
-
-<a href="#about">About</a> <a href="#skills">Skills</a> <a href="#contact">Contact</a>
-
-</div>
-
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -365,6 +419,7 @@ z-index:-1;
 </body>
   
 </html>
+
 
 
 
