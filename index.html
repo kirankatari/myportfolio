@@ -1,442 +1,496 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-<style>
-
-/* Navbar */
-
-.navbar{
-position:fixed;
-top:0;
-width:100%;
-background:#020617;
-padding:15px 0;
-z-index:1000;
-}
-
-.nav-container{
-width:85%;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.nav-logo a{
-color:#00ff9c;
-font-size:22px;
-font-weight:bold;
-text-decoration:none;
-}
-
-.nav-menu{
-list-style:none;
-display:flex;
-gap:25px;
-}
-
-.nav-menu a{
-text-decoration:none;
-color:white;
-font-size:16px;
-transition:0.3s;
-}
-
-.nav-menu a:hover{
-color:#00ff9c;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Venkata Naga Kiran Katari | Cybersecurity Portfolio</title>
-
 <style>
+html { scroll-behavior: smooth; }
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0b0f19;
-color:white;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0f19;
+  color: white;
 }
 
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:#020617;
-padding:15px 0;
-display:flex;
-justify-content:center;
-z-index:1000;
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #020617;
+  padding: 15px 0;
+  z-index: 1000;
+  border-bottom: 1px solid #1e293b;
 }
 
-nav div{
-width:80%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-  
-nav a{
-color:#00ff9c;
-text-decoration:none;
-margin-left:20px;
+.nav-container {
+  width: min(1100px, 85%);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* HERO */
-
-.hero{
-height:100vh;
-background-image: url("images/cyber-bg.jpg");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
+.nav-logo a {
+  color: #00ff9c;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.75);
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
 }
 
-.hero-content{
-position:relative;
-z-index:2;
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s;
 }
 
-.hero h1{
-font-size:60px;
-font-weight:bold;
-letter-spacing:1px;
-text-shadow:0 0 20px rgba(0,255,156,0.5);
-}
-.hero p{
-color:#cbd5e1;
-font-size:18px;
-}
+.nav-menu a:hover { color: #00ff9c; }
 
-button{
-background:#00ff9c;
-border:none;
-padding:14px 30px;
-font-size:16px;
-border-radius:6px;
-font-weight:bold;
-box-shadow:0 0 15px rgba(0,255,156,0.6);
+.btn {
+  display: inline-block;
+  background: #00ff9c;
+  color: #020617;
+  padding: 14px 30px;
+  font-size: 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 255, 156, 0.6);
 }
 
-/* SECTIONS */
+.btn:hover { filter: brightness(1.05); }
 
-section{
-padding:100px 10%;
-margin-top:40px;
-border-bottom:1px solid #1e293b;
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("images/cyber-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
 }
 
-h2{
-color:#00ff9c;
-margin-bottom:20px;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
 }
 
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
 }
 
-.card{
-background:#111827;
-padding:20px;
-border-radius:10px;
-text-align:center;
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(34px, 6vw, 60px);
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(0, 255, 156, 0.5);
 }
 
-footer{
-text-align:center;
-padding:40px;
-background:#020617;
+.hero p {
+  color: #cbd5e1;
+  font-size: 18px;
+  margin: 0 0 24px;
 }
 
+/* Sections */
+section {
+  padding: 100px 10%;
+  border-bottom: 1px solid #1e293b;
+}
+
+section:first-of-type { margin-top: 0; }
+
+h2 {
+  color: #00ff9c;
+  margin: 0 0 20px;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card, .project-card, .cert-card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+}
+
+.project-card h3, .cert-card h3 {
+  margin-top: 0;
+  color: #e2e8f0;
+}
+
+.project-card p, .cert-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.project-card + .project-card,
+.cert-card + .cert-card {
+  margin-top: 20px;
+}
+
+/* AI assistant */
+.assistant-box {
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 720px;
+}
+
+.assistant-box label {
+  display: block;
+  margin-bottom: 8px;
+  color: #cbd5e1;
+}
+
+.assistant-box textarea {
+  width: 100%;
+  min-height: 120px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0b0f19;
+  color: #e2e8f0;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 15px;
+  resize: vertical;
+}
+
+.assistant-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.assistant-actions button {
+  background: #00ff9c;
+  border: none;
+  padding: 12px 22px;
+  font-size: 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #020617;
+}
+
+.assistant-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hint {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.reply {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #0b0f19;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+  min-height: 48px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #020617;
+}
+
+a.link { color: #00ff9c; }
+
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
 </style>
-
 </head>
-
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar">
-  <div class="nav-container">
+<canvas id="matrix" aria-hidden="true"></canvas>
 
+<nav class="navbar" aria-label="Primary">
+  <div class="nav-container">
     <div class="nav-logo">
       <a href="#">Kiran</a>
     </div>
-
     <ul class="nav-menu">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#assistant">AI Assistant</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
   </div>
 </nav>
 
-<!-- HERO -->
-
 <div class="hero">
-
-<div class="hero-content">
-
-<h1>Venkata Naga Kiran Katari</h1>
-
-<p>
-Cybersecurity Graduate Student | Ethical Hacking | Network Security
-</p>
-
-<a href="CV-KIRAN.pdf">
-
-<button>Download Resume</button>
-
-</a>
-
+  <div class="hero-content">
+    <h1>Venkata Naga Kiran Katari</h1>
+    <p>Cybersecurity Graduate Student | Ethical Hacking | Network Security</p>
+    <a class="btn" href="CV-KIRAN.pdf" download>Download Resume</a>
+  </div>
 </div>
-
-</div>
-
-<!-- ABOUT -->
 
 <section id="about">
-
-<h2>About Me</h2>
-
-<p>
-<p>
-I am a technically motivated professional with hands-on experience in networking,
-cybersecurity fundamentals, and systems support.
-</p>
-
-<p>
-I have a strong interest in enterprise networking, infrastructure security, and automation.
-I enjoy understanding how systems work end-to-end and improving them through better design,
-monitoring, and security practices. Alongside my professional experience, I continuously
-build projects and labs to strengthen my real-world skills.
-</p>
-
-<p>
-I am currently pursuing a Master’s degree in Computer Science at Rowan University while
-complementing my education with industry certifications and practical cybersecurity projects.
-</p>
-
-<p>
-📍 Based in Philadelphia, PA
-</p>
-
+  <h2>About Me</h2>
+  <p>
+    I am a technically motivated professional with hands-on experience in networking,
+    cybersecurity fundamentals, and systems support.
+  </p>
+  <p>
+    I have a strong interest in enterprise networking, infrastructure security, and automation.
+    I enjoy understanding how systems work end-to-end and improving them through better design,
+    monitoring, and security practices. Alongside my professional experience, I continuously
+    build projects and labs to strengthen my real-world skills.
+  </p>
+  <p>
+    I am currently pursuing a Master’s degree in Computer Science at Rowan University while
+    complementing my education with industry certifications and practical cybersecurity projects.
+  </p>
+  <p>📍 Based in Philadelphia, PA</p>
 </section>
-
-<!-- SKILLS -->
 
 <section id="skills">
-
-<h2>Technical Skills</h2>
-
-<div class="skills">
-
-<div class="card">Python</div>
-<div class="card">Java</div>
-<div class="card">C</div>
-<div class="card">SQL</div>
-<div class="card">Linux</div>
-<div class="card">Network Security</div>
-<div class="card">Ethical Hacking</div>
-<div class="card">SIEM / SOC</div>
-<div class="card">Burp Suite</div>
-<div class="card">Nmap</div>
-<div class="card">Wireshark</div>
-<div class="card">Splunk</div>
-
-</div>
-
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <div class="card">Python</div>
+    <div class="card">Java</div>
+    <div class="card">C</div>
+    <div class="card">SQL</div>
+    <div class="card">Linux</div>
+    <div class="card">Network Security</div>
+    <div class="card">Ethical Hacking</div>
+    <div class="card">SIEM / SOC</div>
+    <div class="card">Burp Suite</div>
+    <div class="card">Nmap</div>
+    <div class="card">Wireshark</div>
+    <div class="card">Splunk</div>
+  </div>
 </section>
+
 <section id="projects">
+  <h2>Projects</h2>
 
-<h2>Projects</h2>
+  <div class="project-card">
+    <h3>Enhancing IoT Security Through Anomaly Detection and Intrusion Prevention in Cyber-Physical Systems</h3>
+    <p>
+      Developed an advanced intrusion detection system to enhance IoT security in cyber-physical environments using
+      supervised deep learning models including CNN, LSTM, and DNN architectures. The system was evaluated on
+      benchmark datasets such as KDDCup99, NSL-KDD, and UNSW-NB15, achieving accuracies of 100%, 95.1%, and
+      87.4% respectively. A Flask-based web application was deployed to demonstrate real-time anomaly detection with
+      standardized data preprocessing. This research was published in the Proceedings of ICCIET 2024 by Atlantis Press.
+    </p>
+  </div>
 
-<div class="project-card">
-<h3>Enhancing IoT Security Through Anomaly Detection and Intrusion Prevention in Cyber-Physical Systems</h3>
-<p>
-Developed an advanced intrusion detection system to enhance IoT security in cyber-physical environments using
-supervised deep learning models including CNN, LSTM, and DNN architectures. The system was evaluated on
-benchmark datasets such as KDDCup99, NSL-KDD, and UNSW-NB15, achieving accuracies of 100%, 95.1%, and
-87.4% respectively. A Flask-based web application was deployed to demonstrate real-time anomaly detection with
-standardized data preprocessing. This research was published in the Proceedings of ICCIET 2024 by Atlantis Press.
-</p>
-</div>
+  <div class="project-card">
+    <h3>Keylogger – Capturing Keystrokes</h3>
+    <p>
+      Developed a proof-of-concept keylogger application capable capturing keyboard input events through a graphical
+      user interface. This project was created for cybersecurity awareness and educational demonstrations, highlighting
+      how keystroke monitoring works and emphasizing the importance of endpoint protection and ethical security practices.
+    </p>
+  </div>
 
-<div class="project-card">
-<h3>Keylogger – Capturing Keystrokes</h3>
-<p>
-Developed a proof-of-concept keylogger application capable of capturing keyboard input events through a graphical
-user interface. This project was created for cybersecurity awareness and educational demonstrations, highlighting
-how keystroke monitoring works and emphasizing the importance of endpoint protection and ethical security practices.
-</p>
-</div>
-
-<div class="project-card">
-<h3>Student Database Management System</h3>
-<p>
-Developed a web-based Student Database Management System (SDMS) using PHP, HTML, CSS, and MySQL to
-manage student records, faculty information, attendance tracking, exam data, and registration details. Implemented
-full CRUD operations across relational tables and incorporated views, stored procedures, functions, and triggers to
-maintain data consistency and integrity. The system supports automated registration, attendance validation, and
-reliable ACID-compliant database transactions.
-</p>
-</div>
-
+  <div class="project-card">
+    <h3>Student Database Management System</h3>
+    <p>
+      Developed a web-based Student Database Management System (SDMS) using PHP, HTML, CSS, and MySQL to
+      manage student records, faculty information, attendance tracking, exam data, and registration details. Implemented
+      full CRUD operations across relational tables and incorporated views, stored procedures, functions, and triggers to
+      maintain data consistency and integrity.
+    </p>
+  </div>
 </section>
 
-  <section id="certifications">
+<section id="certifications">
+  <h2>Certifications</h2>
 
-<h2>Certifications</h2>
+  <div class="cert-card">
+    <h3>Microsoft Azure Fundamentals (AZ-900)</h3>
+    <p>
+      Microsoft certification demonstrating foundational knowledge of cloud concepts,
+      Azure services, security, compliance, pricing, and cloud architecture.
+    </p>
+  </div>
 
-<div class="cert-card">
-<h3>Microsoft Azure Fundamentals (AZ-900)</h3>
-<p>
-Microsoft certification demonstrating foundational knowledge of cloud concepts,
-Azure services, security, compliance, pricing, and cloud architecture.
-</p>
-</div>
+  <div class="cert-card">
+    <h3>Introduction to Cyber Security – Coursera</h3>
+    <p>
+      Completed foundational cybersecurity training covering threat landscapes,
+      network security fundamentals, basic cryptography concepts, and security best practices.
+    </p>
+  </div>
 
-<div class="cert-card">
-<h3>Introduction to Cyber Security – Coursera</h3>
-<p>
-Completed foundational cybersecurity training covering threat landscapes,
-network security fundamentals, basic cryptography concepts, and security best practices.
-</p>
-</div>
-
-<div class="cert-card">
-<h3>CompTIA Security+ (In Progress)</h3>
-<p>
-Currently preparing for the CompTIA Security+ certification focusing on security
-operations, risk management, threat detection, incident response, and network security.
-</p>
-</div>
-
+  <div class="cert-card">
+    <h3>CompTIA Security+ (In Progress)</h3>
+    <p>
+      Currently preparing for the CompTIA Security+ certification focusing on security
+      operations, risk management, threat detection, incident response, and network security.
+    </p>
+  </div>
 </section>
-  
-<!-- CONTACT -->
+
+<section id="assistant">
+  <h2>Ask About My Background</h2>
+  <p class="hint">
+    This assistant answers questions about my education, skills, projects, and certifications using information from this portfolio.
+    For hiring or official inquiries, please use email or LinkedIn in the Contact section.
+  </p>
+
+  <div class="assistant-box">
+    <label for="usermsg">Your question</label>
+    <textarea id="usermsg" placeholder='Example: "What IoT security project did you publish?"'></textarea>
+
+    <div class="assistant-actions">
+      <button type="button" id="sendBtn">Ask</button>
+      <span class="hint" id="status"></span>
+    </div>
+
+    <div class="reply" id="reply" role="status" aria-live="polite"></div>
+  </div>
+</section>
 
 <section id="contact">
-
-<h2>Contact</h2>
-
-<p>Email: kirankatari99@gmail.com</p>
-
-<p>
-GitHub:
-<a href="https://github.com/kirankatari" style="color:#00ff9c">
-github.com/kirankatari
-</a>
-</p>
-
-<p>
-LinkedIn:
-<a href="https://www.linkedin.com/in/venkata-naga-kiran-katari-b094361a9"
-style="color:#00ff9c">
-linkedin.com/in/venkata-naga-kiran-katari
-</a>
-</p>
-
+  <h2>Contact</h2>
+  <p>Email: kirankatari99@gmail.com</p>
+  <p>
+    GitHub:
+    <a class="link" href="https://github.com/kirankatari" target="_blank" rel="noopener noreferrer">github.com/kirankatari</a>
+  </p>
+  <p>
+    LinkedIn:
+    <a class="link" href="https://www.linkedin.com/in/venkata-naga-kiran-katari-b094361a9" target="_blank" rel="noopener noreferrer">linkedin.com/in/venkata-naga-kiran-katari</a>
+  </p>
 </section>
 
 <footer>
-
-© 2026 Venkata Naga Kiran Katari | Cybersecurity Portfolio
-
+  © 2026 Venkata Naga Kiran Katari | Cybersecurity Portfolio
 </footer>
 
-</body>
-
-  <!-- Matrix Background -->
-<canvas id="matrix"></canvas>
-
 <script>
+/* Matrix background */
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
+function resizeCanvas() {
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
 const letters = "01";
 const fontSize = 16;
+let columns = Math.floor(canvas.width / fontSize);
+let drops = Array.from({ length: columns }, () => 1);
 
-const columns = canvas.width / fontSize;
-const drops = [];
+window.addEventListener("resize", () => {
+  columns = Math.floor(canvas.width / fontSize);
+  drops = Array.from({ length: columns }, () => 1);
+});
 
-for(let x = 0; x < columns; x++)
-drops[x] = 1;
+function draw() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-function draw(){
+  ctx.fillStyle = "#00ff9c";
+  ctx.font = fontSize + "px monospace";
 
-ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters.charAt(Math.floor(Math.random() * letters.length));
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-ctx.fillStyle = "#00ff9c";
-ctx.font = fontSize + "px monospace";
-
-for(let i = 0; i < drops.length; i++){
-
-const text = letters.charAt(Math.floor(Math.random()*letters.length));
-
-ctx.fillText(text, i*fontSize, drops[i]*fontSize);
-
-if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
-drops[i] = 0;
-
-drops[i]++;
-}
-
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+    drops[i]++;
+  }
 }
 
 setInterval(draw, 33);
+
+/* AI assistant -> server route /api/chat (implement on VPS) */
+const sendBtn = document.getElementById("sendBtn");
+const usermsg = document.getElementById("usermsg");
+const replyEl = document.getElementById("reply");
+const statusEl = document.getElementById("status");
+
+sendBtn.addEventListener("click", async () => {
+  const message = usermsg.value.trim();
+  replyEl.textContent = "";
+  statusEl.textContent = "";
+
+  if (!message) {
+    replyEl.textContent = "Please type a question.";
+    return;
+  }
+
+  sendBtn.disabled = true;
+  statusEl.textContent = "Thinking…";
+
+  try {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message })
+    });
+
+    let data = null;
+    try { data = await response.json(); } catch (_) { /* non-JSON */ }
+
+    if (!response.ok || !data || typeof data.reply !== "string") {
+      throw new Error((data && data.error) ? data.error : "bad_response");
+    }
+
+    replyEl.textContent = data.reply;
+    statusEl.textContent = "";
+  } catch (_) {
+    statusEl.textContent = "";
+    replyEl.textContent =
+      "Sorry — I can’t reach the assistant right now. Please try again in a minute, or contact me directly at kirankatari99@gmail.com.";
+  } finally {
+    sendBtn.disabled = false;
+  }
+});
 </script>
-
-<style>
-#matrix{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-}
-</style>
-
 </body>
-  
 </html>
-
-
-
-
-
-
-
