@@ -1,0 +1,691 @@
+{
+ "sha": "119faec83a37f951c4c3d79cf12770cd636f20c7",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/119faec83a37f951c4c3d79cf12770cd636f20c7",
+ "tree": [
+ {
+ "path": ".gitignore",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "fc90062b62ed8c7cafa677289e603a11f14fced0",
+ "size": 29,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/fc90062b62ed8c7cafa677289e603a11f14fced0"
+ },
+ {
+ "path": "Azure_AZ900_Certificate.pdf",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "1cf24696ddd2569367faacca116bd4011013310e",
+ "size": 278324,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/1cf24696ddd2569367faacca116bd4011013310e"
+ },
+ {
+ "path": "README.md",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "513c4d0ece2b4a383cc06e37fa566ae2ee5beccb",
+ "size": 3500,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/513c4d0ece2b4a383cc06e37fa566ae2ee5beccb"
+ },
+ {
+ "path": "Sai_Kiran_Resume.pdf",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "b6b9573e2bcac461cb0fc7181e4f42830f224a7e",
+ "size": 256233,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/b6b9573e2bcac461cb0fc7181e4f42830f224a7e"
+ },
+ {
+ "path": "api",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "560c152560e63aa087ef28e14e1a65c3854b7f47",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/560c152560e63aa087ef28e14e1a65c3854b7f47"
+ },
+ {
+ "path": "api/chat.php",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "ab437872bc20705a4cdd09052b622405dc129f67",
+ "size": 9814,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/ab437872bc20705a4cdd09052b622405dc129f67"
+ },
+ {
+ "path": "api/portfolio-advisor.php",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "4c991725eff7a4f33b377e779a9dee6c01701f18",
+ "size": 6263,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/4c991725eff7a4f33b377e779a9dee6c01701f18"
+ },
+ {
+ "path": "assets",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "855eb8a6f8ec8983eaed5d427d73b21db2906802",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/855eb8a6f8ec8983eaed5d427d73b21db2906802"
+ },
+ {
+ "path": "assets/css",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "d5df4acfe79318766546b10b5b4703f04943c83c",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/d5df4acfe79318766546b10b5b4703f04943c83c"
+ },
+ {
+ "path": "assets/css/ai-advisor.css",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "66a15759f3f0a823bc9a78d2a4c09d02cac879da",
+ "size": 7705,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/66a15759f3f0a823bc9a78d2a4c09d02cac879da"
+ },
+ {
+ "path": "assets/css/fontawesome-all.min.css",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "03c42e37feba4ccd3507696d312f71be11de8b43",
+ "size": 59401,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/03c42e37feba4ccd3507696d312f71be11de8b43"
+ },
+ {
+ "path": "assets/css/images",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "de2daafd64b9bd9cee32e819419a1ac21cca50bc",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/de2daafd64b9bd9cee32e819419a1ac21cca50bc"
+ },
+ {
+ "path": "assets/css/images/close.svg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "7c354694dc6b5175eabad7e9c3530f957dd06757",
+ "size": 246,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/7c354694dc6b5175eabad7e9c3530f957dd06757"
+ },
+ {
+ "path": "assets/css/main.css",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "dd1f55f4cd942e2c9f6c6290836d5ec164a99e71",
+ "size": 76390,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/dd1f55f4cd942e2c9f6c6290836d5ec164a99e71"
+ },
+ {
+ "path": "assets/css/noscript.css",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "37c3631222a1e8f1cda211c1471e919c495d019a",
+ "size": 744,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/37c3631222a1e8f1cda211c1471e919c495d019a"
+ },
+ {
+ "path": "assets/js",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "391f377ed08cb8c2f7c0448bd2a0e7e0aabfacab",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/391f377ed08cb8c2f7c0448bd2a0e7e0aabfacab"
+ },
+ {
+ "path": "assets/js/ai-advisor.js",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "2f3fd1fef04e29f828caf9e1b9c2b6122fc451b0",
+ "size": 9973,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/2f3fd1fef04e29f828caf9e1b9c2b6122fc451b0"
+ },
+ {
+ "path": "assets/js/breakpoints.min.js",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "32419ccb9630aee260ffb7bf9159b6f497d01b22",
+ "size": 2439,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/32419ccb9630aee260ffb7bf9159b6f497d01b22"
+ },
+ {
+ "path": "assets/js/browser.min.js",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "39c5ddcd59d5d66f1cf0d13cc985bdb555c7f7ca",
+ "size": 2051,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/39c5ddcd59d5d66f1cf0d13cc985bdb555c7f7ca"
+ },
+ {
+ "path": "assets/js/frontend.js",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "2f3fd1fef04e29f828caf9e1b9c2b6122fc451b0",
+ "size": 9973,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/2f3fd1fef04e29f828caf9e1b9c2b6122fc451b0"
+ },
+ {
+ "path": "assets/js/jquery.min.js",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "c4c6022f2982e8dae64cebd6b9a2b59f2547faad",
+ "size": 89501,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/c4c6022f2982e8dae64cebd6b9a2b59f2547faad"
+ },
+ {
+ "path": "assets/js/jquery.scrollex.min.js",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "a4727fed3ebea4940d9ec195b4b216ecb781b139",
+ "size": 2257,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/a4727fed3ebea4940d9ec195b4b216ecb781b139"
+ },
+ {
+ "path": "assets/js/main.js",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "e26aedf72c52d61f33644a7d76444e74db1154c6",
+ "size": 2705,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/e26aedf72c52d61f33644a7d76444e74db1154c6"
+ },
+ {
+ "path": "assets/js/util.js",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "bdb8e9f0b26baa090d77bab66d759d75413a4f01",
+ "size": 12433,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/bdb8e9f0b26baa090d77bab66d759d75413a4f01"
+ },
+ {
+ "path": "assets/sass",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "c2086c907660c15f276837d1fa646f2a9f915635",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/c2086c907660c15f276837d1fa646f2a9f915635"
+ },
+ {
+ "path": "assets/sass/base",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "e6662308dc9a84e8b9166a29fa3466ce60ea79b1",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/e6662308dc9a84e8b9166a29fa3466ce60ea79b1"
+ },
+ {
+ "path": "assets/sass/base/_page.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "d7eb452ebfd463d6a9317d8e5d6bdf95a649c089",
+ "size": 1299,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/d7eb452ebfd463d6a9317d8e5d6bdf95a649c089"
+ },
+ {
+ "path": "assets/sass/base/_reset.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "e8339e719af2f5ae7ad94017639aa957d503910d",
+ "size": 1571,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/e8339e719af2f5ae7ad94017639aa957d503910d"
+ },
+ {
+ "path": "assets/sass/base/_typography.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "2aeb5c228f90e521a98c2e0c550eb03cfca63b45",
+ "size": 4080,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/2aeb5c228f90e521a98c2e0c550eb03cfca63b45"
+ },
+ {
+ "path": "assets/sass/components",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "f23762fd08eff43abfec7c776af8cf910437f0bd",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/f23762fd08eff43abfec7c776af8cf910437f0bd"
+ },
+ {
+ "path": "assets/sass/components/_actions.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "466429d6e7f1d87f44dd4e5868ee134b0111b6b8",
+ "size": 1790,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/466429d6e7f1d87f44dd4e5868ee134b0111b6b8"
+ },
+ {
+ "path": "assets/sass/components/_box.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "61a4d9b5016d41f361bf904bd7bd5c1bccdbee27",
+ "size": 517,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/61a4d9b5016d41f361bf904bd7bd5c1bccdbee27"
+ },
+ {
+ "path": "assets/sass/components/_button.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "1b4d0d9288acb34dcc360af93eac5a53b0a7e5eb",
+ "size": 1766,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/1b4d0d9288acb34dcc360af93eac5a53b0a7e5eb"
+ },
+ {
+ "path": "assets/sass/components/_contact.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "8cca5800008ef022d9d51e9cc94e8518e45771f6",
+ "size": 802,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/8cca5800008ef022d9d51e9cc94e8518e45771f6"
+ },
+ {
+ "path": "assets/sass/components/_features.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "5c6e3bb8813ccd1b1546188820e28de474a97970",
+ "size": 1909,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/5c6e3bb8813ccd1b1546188820e28de474a97970"
+ },
+ {
+ "path": "assets/sass/components/_form.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "371ce481dbffd17422d4086f20cb7cb1d9bb1284",
+ "size": 5205,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/371ce481dbffd17422d4086f20cb7cb1d9bb1284"
+ },
+ {
+ "path": "assets/sass/components/_icon.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "20348e5245759dbde8ae75030484c7bbfc1f42b8",
+ "size": 484,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/20348e5245759dbde8ae75030484c7bbfc1f42b8"
+ },
+ {
+ "path": "assets/sass/components/_icons.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "7f2d4a99bbcca17d8c6dbcf5689ef34a06e7efaf",
+ "size": 432,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/7f2d4a99bbcca17d8c6dbcf5689ef34a06e7efaf"
+ },
+ {
+ "path": "assets/sass/components/_image.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "b8f6a48e475b073a089b9ce6f125aa77ea293e98",
+ "size": 889,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/b8f6a48e475b073a089b9ce6f125aa77ea293e98"
+ },
+ {
+ "path": "assets/sass/components/_list.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "7ed1f33850a5e819a26fbafeec36f32e4c837950",
+ "size": 894,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/7ed1f33850a5e819a26fbafeec36f32e4c837950"
+ },
+ {
+ "path": "assets/sass/components/_pagination.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "52b35ac7b7e68c9615091c69ac38b39042d6815d",
+ "size": 1413,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/52b35ac7b7e68c9615091c69ac38b39042d6815d"
+ },
+ {
+ "path": "assets/sass/components/_row.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "56b1f32fe0835793fca0f1699f47180a255ed37f",
+ "size": 714,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/56b1f32fe0835793fca0f1699f47180a255ed37f"
+ },
+ {
+ "path": "assets/sass/components/_section.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "fe22c6ad145a90292de2a3adb56c7834ee442472",
+ "size": 249,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/fe22c6ad145a90292de2a3adb56c7834ee442472"
+ },
+ {
+ "path": "assets/sass/components/_table.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "6d5c37ca55be5e23b6911f9e8bd845870ca6661c",
+ "size": 1293,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/6d5c37ca55be5e23b6911f9e8bd845870ca6661c"
+ },
+ {
+ "path": "assets/sass/layout",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "fab370b1092d0e6d660712f50f3e87f95ffde145",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/fab370b1092d0e6d660712f50f3e87f95ffde145"
+ },
+ {
+ "path": "assets/sass/layout/_banner.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "dd39b4f28536e588db654b1abf6900197e6fc4af",
+ "size": 3221,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/dd39b4f28536e588db654b1abf6900197e6fc4af"
+ },
+ {
+ "path": "assets/sass/layout/_footer.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "393f06313dc1897d2b06ab7fa2b342513e3302a2",
+ "size": 2936,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/393f06313dc1897d2b06ab7fa2b342513e3302a2"
+ },
+ {
+ "path": "assets/sass/layout/_header.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "5cc96e2d2f2618d98476a11b76c700ab2781052f",
+ "size": 2737,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/5cc96e2d2f2618d98476a11b76c700ab2781052f"
+ },
+ {
+ "path": "assets/sass/layout/_menu.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "1d7886824129a1ebd46e76b6d9b65135a26754c9",
+ "size": 2845,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/1d7886824129a1ebd46e76b6d9b65135a26754c9"
+ },
+ {
+ "path": "assets/sass/layout/_wrapper.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "11ceb9aec3b521a30bfe359157fb713658e41fb7",
+ "size": 6374,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/11ceb9aec3b521a30bfe359157fb713658e41fb7"
+ },
+ {
+ "path": "assets/sass/libs",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "4af0bbf4ff4260c63cc5a4f24a8d39cb6aa372fa",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/4af0bbf4ff4260c63cc5a4f24a8d39cb6aa372fa"
+ },
+ {
+ "path": "assets/sass/libs/_breakpoints.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "c5301d859d7a1d7d5f1cb6b1534d00be2fcd91c1",
+ "size": 4577,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/c5301d859d7a1d7d5f1cb6b1534d00be2fcd91c1"
+ },
+ {
+ "path": "assets/sass/libs/_functions.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "f563aabf7d370883650fca43eb21438c80e00594",
+ "size": 1957,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/f563aabf7d370883650fca43eb21438c80e00594"
+ },
+ {
+ "path": "assets/sass/libs/_html-grid.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "7438a8c7bbfe3d75b119fd9c6ee274b6f41e79ca",
+ "size": 2840,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/7438a8c7bbfe3d75b119fd9c6ee274b6f41e79ca"
+ },
+ {
+ "path": "assets/sass/libs/_mixins.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "a331483a9cbd521459a552fe53b484343a660d3f",
+ "size": 2218,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/a331483a9cbd521459a552fe53b484343a660d3f"
+ },
+ {
+ "path": "assets/sass/libs/_vars.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "fb5eec9315dbf0b7a2e32fc093d3560438291cfa",
+ "size": 1102,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/fb5eec9315dbf0b7a2e32fc093d3560438291cfa"
+ },
+ {
+ "path": "assets/sass/libs/_vendor.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "6599a3fe956dc39d7ce13f7cf8a9620f2bac5455",
+ "size": 7355,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/6599a3fe956dc39d7ce13f7cf8a9620f2bac5455"
+ },
+ {
+ "path": "assets/sass/main.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "d905ab3804b35273b5ccc2b8baa233ed1740093b",
+ "size": 1410,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/d905ab3804b35273b5ccc2b8baa233ed1740093b"
+ },
+ {
+ "path": "assets/sass/noscript.scss",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "fd5036b75715fb52de2f2e7d95277bdaf6c4b68d",
+ "size": 671,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/fd5036b75715fb52de2f2e7d95277bdaf6c4b68d"
+ },
+ {
+ "path": "assets/webfonts",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "6835739b94f7c50e853dbe0ccdfeee32b39cd311",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/6835739b94f7c50e853dbe0ccdfeee32b39cd311"
+ },
+ {
+ "path": "assets/webfonts/fa-brands-400.eot",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "cba6c6cce88182cb9374acea956769f87a8b8004",
+ "size": 134294,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/cba6c6cce88182cb9374acea956769f87a8b8004"
+ },
+ {
+ "path": "assets/webfonts/fa-brands-400.svg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "b9881a43b7313e5a033582e4bf0bcb26bf11730c",
+ "size": 747927,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/b9881a43b7313e5a033582e4bf0bcb26bf11730c"
+ },
+ {
+ "path": "assets/webfonts/fa-brands-400.ttf",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "8d75deddae520da95d3cf111f4ccbf3361074292",
+ "size": 133988,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/8d75deddae520da95d3cf111f4ccbf3361074292"
+ },
+ {
+ "path": "assets/webfonts/fa-brands-400.woff",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "3375bef0911555af28fea3c02c3e7671c50a5e7b",
+ "size": 89988,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/3375bef0911555af28fea3c02c3e7671c50a5e7b"
+ },
+ {
+ "path": "assets/webfonts/fa-brands-400.woff2",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "402f81c0bc082532fca61319959cb4b8e597de9d",
+ "size": 76736,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/402f81c0bc082532fca61319959cb4b8e597de9d"
+ },
+ {
+ "path": "assets/webfonts/fa-regular-400.eot",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "a4e598936b3eb6ceb0080dccccdcd49bfe95ca98",
+ "size": 34034,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/a4e598936b3eb6ceb0080dccccdcd49bfe95ca98"
+ },
+ {
+ "path": "assets/webfonts/fa-regular-400.svg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "463af27c02dd3cf5f729e35f23050d4567855824",
+ "size": 144714,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/463af27c02dd3cf5f729e35f23050d4567855824"
+ },
+ {
+ "path": "assets/webfonts/fa-regular-400.ttf",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "7157aafbacdb095b479ae52f59e28e19ce61d79a",
+ "size": 33736,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/7157aafbacdb095b479ae52f59e28e19ce61d79a"
+ },
+ {
+ "path": "assets/webfonts/fa-regular-400.woff",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "ad077c6bec782b7c15bfa4ec96ee5900faaa3ccb",
+ "size": 16276,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/ad077c6bec782b7c15bfa4ec96ee5900faaa3ccb"
+ },
+ {
+ "path": "assets/webfonts/fa-regular-400.woff2",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "56328948b3b1bacb23a13af9d727fd75c0343448",
+ "size": 13224,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/56328948b3b1bacb23a13af9d727fd75c0343448"
+ },
+ {
+ "path": "assets/webfonts/fa-solid-900.eot",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "e99417197e4ba693e102ffc3f46b898266f6e694",
+ "size": 203030,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/e99417197e4ba693e102ffc3f46b898266f6e694"
+ },
+ {
+ "path": "assets/webfonts/fa-solid-900.svg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "00296e9598fadee8e22cfd89826d3d10f2c0ba26",
+ "size": 918991,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/00296e9598fadee8e22cfd89826d3d10f2c0ba26"
+ },
+ {
+ "path": "assets/webfonts/fa-solid-900.ttf",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "25abf389e22db851b03dd14d87ca10acb8b6b44b",
+ "size": 202744,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/25abf389e22db851b03dd14d87ca10acb8b6b44b"
+ },
+ {
+ "path": "assets/webfonts/fa-solid-900.woff",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "23ee663443a7c6d2393dbcb713b07c566f40c925",
+ "size": 101648,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/23ee663443a7c6d2393dbcb713b07c566f40c925"
+ },
+ {
+ "path": "assets/webfonts/fa-solid-900.woff2",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "2217164f0c05a385d7d0d83e030fdbae01e99304",
+ "size": 78268,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/2217164f0c05a385d7d0d83e030fdbae01e99304"
+ },
+ {
+ "path": "images",
+ "mode": "040000",
+ "type": "tree",
+ "sha": "41e975daa9e8c3419b49331db5ff1021cf9722e9",
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/trees/41e975daa9e8c3419b49331db5ff1021cf9722e9"
+ },
+ {
+ "path": "images/bg.jpg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "e2bb2224d7554f1487c8552b46fa7355db6fea66",
+ "size": 53903,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/e2bb2224d7554f1487c8552b46fa7355db6fea66"
+ },
+ {
+ "path": "images/pic01.jpg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "9363f6de93fa0a5d443138d021696bab18f7f1d2",
+ "size": 3313,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/9363f6de93fa0a5d443138d021696bab18f7f1d2"
+ },
+ {
+ "path": "images/pic02.jpg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "3b0c67248845f0ae3bacf36c4c0281b2f352ff6e",
+ "size": 3711,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/3b0c67248845f0ae3bacf36c4c0281b2f352ff6e"
+ },
+ {
+ "path": "images/pic03.jpg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "afbf354df89cc04c7ad72559aaf8cb2be6683e9b",
+ "size": 3855,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/afbf354df89cc04c7ad72559aaf8cb2be6683e9b"
+ },
+ {
+ "path": "images/pic04.jpg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "01a96a21b9a21c98c49a319ae6c9009f50f9bab5",
+ "size": 5677,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/01a96a21b9a21c98c49a319ae6c9009f50f9bab5"
+ },
+ {
+ "path": "images/pic05.jpg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "06ef1a057629f90079e0c3c29fd848154a6608ab",
+ "size": 5936,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/06ef1a057629f90079e0c3c29fd848154a6608ab"
+ },
+ {
+ "path": "images/pic06.jpg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "0a615d9598b12092e35119d761fe369f3a5013fd",
+ "size": 5887,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/0a615d9598b12092e35119d761fe369f3a5013fd"
+ },
+ {
+ "path": "images/pic07.jpg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "251251c6575c70c012b2f464c527efad56992930",
+ "size": 6325,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/251251c6575c70c012b2f464c527efad56992930"
+ },
+ {
+ "path": "images/pic08.jpg",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "9c3c97c5be14196b138b6fdd72a3374f221bb8fd",
+ "size": 10066,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/9c3c97c5be14196b138b6fdd72a3374f221bb8fd"
+ },
+ {
+ "path": "index.html",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "ccce539b3db304722e3db03e4f1b7b14ed4be438",
+ "size": 11699,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/ccce539b3db304722e3db03e4f1b7b14ed4be438"
+ },
+ {
+ "path": "nginx-portfolio.conf",
+ "mode": "100644",
+ "type": "blob",
+ "sha": "61f65ce28cfd52c8a498c9f592869b7182ab05f6",
+ "size": 808,
+ "url": "https://api.github.com/repos/Saikiran0627/myportfolio/git/blobs/61f65ce28cfd52c8a498c9f592869b7182ab05f6"
+ }
+ ],
+ "truncated": false
+}

@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venkata Naga Kiran Katari | Cybersecurity Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-deep: #06070c;
+  --bg-elevated: #0c0e14;
+  --bg-card: #12141c;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(126, 184, 249, 0.35);
+  --text: #eceef4;
+  --muted: #8f96a8;
+  --accent: #7eb8f9;
+  --accent-alt: #b49cff;
+  --accent-soft: rgba(126, 184, 249, 0.14);
+  --glow: rgba(126, 184, 249, 0.22);
+  --shadow-glow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  --radius: 14px;
+  --font-sans: "Outfit", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg-deep);
+  color: var(--text);
+  line-height: 1.62;
+}
+
+/* layered auroras — no matrix, no hacker green */
+#ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background: var(--bg-deep);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(85px);
+  opacity: 0.42;
+  will-change: transform;
+  animation: drift 22s ease-in-out infinite alternate;
+}
+
+.aurora-a {
+  width: min(520px, 90vw);
+  height: min(520px, 90vw);
+  background: #2a3f73;
+  top: -12%;
+  left: -5%;
+}
+
+.aurora-b {
+  width: min(460px, 80vw);
+  height: min(460px, 80vw);
+  background: #4a3670;
+  bottom: -8%;
+  right: -8%;
+  animation-delay: -9s;
+  animation-duration: 28s;
+}
+
+.aurora-c {
+  width: min(340px, 65vw);
+  height: min(340px, 65vw);
+  background: #1f4f5c;
+  top: 38%;
+  left: 42%;
+  opacity: 0.28;
+  animation-duration: 20s;
+  animation-delay: -4s;
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(3%, 5%) scale(1.06); }
+}
+
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 72% 60% at 50% 35%, black 10%, transparent 72%);
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(6, 7, 12, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 16px 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  width: min(1180px, 92%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: clamp(12px, 3vw, 24px);
+  min-height: 44px;
+  position: relative;
+}
+
+.nav-gutter-start {
+  grid-column: 1;
+  pointer-events: none;
+}
+
+.nav-menu-slot {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.nav-actions {
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 4px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu li { position: relative; }
+
+.nav-menu a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: color 0.22s ease, background 0.22s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.nav-menu a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.btn-nav-resume {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  text-decoration: none;
+  background: rgba(126, 184, 249, 0.06);
+  transition: background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.btn-nav-resume:hover {
+  background: rgba(126, 184, 249, 0.12);
+  border-color: rgba(180, 156, 255, 0.45);
+  box-shadow: 0 0 32px rgba(126, 184, 249, 0.15);
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), #93c5fd);
+  color: #071018;
+  padding: 14px 28px;
+  font-size: 15px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  box-shadow: var(--shadow-glow), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.07);
+  transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("images/cyber-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 112px 24px 88px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 7, 12, 0.35) 0%,
+    rgba(6, 7, 12, 0.82) 50%,
+    var(--bg-deep) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-greeting {
+  margin: 0 0 12px;
+  font-size: clamp(16px, 2.4vw, 20px);
+  font-weight: 600;
+  color: rgba(167, 200, 255, 0.95);
+  letter-spacing: 0.04em;
+}
+
+.hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(34px, 5.8vw, 62px);
+  font-weight: 700;
+  letter-spacing: -0.038em;
+  line-height: 1.06;
+  background: linear-gradient(165deg, #ffffff 18%, var(--accent) 120%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-role {
+  margin: 0 0 18px;
+  font-size: clamp(16px, 2.15vw, 21px);
+  font-weight: 600;
+  line-height: 1.42;
+  max-width: 640px;
+  background: linear-gradient(90deg, #c9defc, var(--accent-alt));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-tagline {
+  margin: 0;
+  color: rgba(236, 238, 244, 0.78);
+  font-size: clamp(14px, 1.7vw, 17px);
+  font-weight: 400;
+  line-height: 1.62;
+  max-width: 520px;
+}
+
+/* Sections */
+section {
+  padding: 88px clamp(20px, 5vw, 48px);
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  box-sizing: border-box;
+}
+
+section:first-of-type { margin-top: 0; }
+
+h2 {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 14px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+}
+
+.section-lead {
+  color: var(--muted);
+  margin: 0 0 28px;
+  max-width: 640px;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.card, .project-card, .cert-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.25s ease, transform 0.22s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-alt), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(126, 184, 249, 0.22);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35), 0 0 48px rgba(126, 184, 249, 0.06);
+}
+
+.card:hover::before {
+  opacity: 0.85;
+}
+
+.card {
+  font-weight: 500;
+  font-size: 15px;
+  color: #c5cdd9;
+}
+
+.project-card:hover,
+.cert-card:hover {
+  border-color: rgba(126, 184, 249, 0.18);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+.project-card h3, .cert-card h3 {
+  margin-top: 0;
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.38;
+}
+
+.project-card p, .cert-card p {
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.project-card + .project-card,
+.cert-card + .cert-card {
+  margin-top: 18px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 16px;
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+a.link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a.link:hover {
+  color: #b8dcff;
+  text-decoration: underline;
+}
+
+/* Contact — two-column (details + form) */
+#contact {
+  max-width: 1000px;
+}
+
+#contact > h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+  margin-bottom: 10px;
+}
+
+#contact > h2::after {
+  width: min(280px, 60%);
+  height: 2px;
+  margin-top: 12px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 56px);
+  align-items: start;
+  margin-top: 8px;
+}
+
+.contact-intro {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.62;
+  margin: 0 0 26px;
+  max-width: 38ch;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-row-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  color: var(--accent);
+}
+
+.contact-row-body {
+  min-width: 0;
+}
+
+.contact-row-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.contact-row a.contact-mail {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.contact-row a.contact-mail:hover {
+  color: #b8dcff;
+  text-decoration: underline;
+}
+
+.contact-row .contact-plain {
+  color: rgba(236, 238, 244, 0.82);
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.contact-row a.contact-link-out {
+  color: rgba(236, 238, 244, 0.78);
+  text-decoration: none;
+  font-size: 15px;
+  word-break: break-all;
+}
+
+.contact-row a.contact-link-out:hover {
+  color: var(--accent);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid rgba(126, 184, 249, 0.22);
+  background: var(--bg-elevated);
+  color: var(--text);
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(143, 150, 168, 0.65);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-alt);
+  box-shadow: 0 0 0 3px rgba(180, 156, 255, 0.12);
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.btn-contact-send {
+  margin-top: 4px;
+  width: 100%;
+  padding: 14px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-contact-send:hover {
+  background: rgba(126, 184, 249, 0.1);
+  box-shadow: 0 0 28px rgba(126, 184, 249, 0.12);
+}
+
+@media (max-width: 800px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Floating AI chat dock (panel + FAB) */
+.assistant-stack {
+  position: fixed;
+  right: max(22px, 3vw);
+  bottom: max(26px, 4vh);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  font-family: var(--font-sans);
+}
+
+.chat-widget {
+  display: none;
+  width: min(388px, calc(100vw - 44px));
+  max-height: min(520px, 72vh);
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid rgba(126, 184, 249, 0.22);
+  background: rgba(14, 16, 24, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55), 0 0 1px rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.chat-widget.is-open {
+  display: flex;
+  animation: chat-pop 0.28s ease;
+}
+
+@keyframes chat-pop {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-widget-header {
+  position: relative;
+  padding: 14px 44px 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(126, 184, 249, 0.06);
+}
+
+.chat-widget-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.chat-widget-sub {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.chat-widget-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.chat-widget-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.chat-widget-messages {
+  flex: 1;
+  min-height: 200px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 14px 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-msg {
+  display: flex;
+}
+
+.chat-msg-user { justify-content: flex-end; }
+
+.chat-msg-bot { justify-content: flex-start; }
+
+.chat-msg-bubble {
+  max-width: 92%;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.52;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.chat-msg-user .chat-msg-bubble {
+  background: linear-gradient(135deg, rgba(126, 184, 249, 0.28), rgba(180, 156, 255, 0.18));
+  color: var(--text);
+  border-radius: 12px 12px 4px 12px;
+}
+
+.chat-msg-bot .chat-msg-bubble {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(236, 238, 244, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px 12px 12px 4px;
+}
+
+.chat-msg-hint .chat-msg-bubble {
+  color: rgba(143, 150, 168, 0.95);
+  font-size: 13px;
+}
+
+.chat-msg-typing .chat-msg-bubble {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.chat-widget-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--border);
+  align-items: flex-end;
+}
+
+.chat-widget-form textarea {
+  flex: 1;
+  resize: none;
+  min-height: 42px;
+  max-height: 120px;
+  border-radius: 10px;
+  border: 1px solid rgba(126, 184, 249, 0.22);
+  background: var(--bg-elevated);
+  color: var(--text);
+  padding: 10px 12px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chat-widget-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-alt);
+  box-shadow: 0 0 0 3px rgba(180, 156, 255, 0.12);
+}
+
+.chat-widget-form button[type="submit"] {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  color: #05070c;
+  background: linear-gradient(135deg, var(--accent), #9dd0ff);
+  transition: filter 0.18s ease, transform 0.18s ease;
+}
+
+.chat-widget-form button[type="submit"]:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.chat-widget-form button[type="submit"]:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.assistant-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+.assistant-backdrop.is-visible {
+  display: block;
+}
+
+@media (max-width: 540px) {
+  .chat-widget.is-open {
+    width: calc(100vw - 28px);
+    max-height: 65vh;
+  }
+}
+
+.assistant-fab {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font: inherit;
+  color: inherit;
+}
+
+.assistant-fab-chat-bubble {
+  background: rgba(16, 18, 26, 0.95);
+  border: 1px solid rgba(126, 184, 249, 0.22);
+  border-radius: 14px;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: rgba(236, 238, 244, 0.65);
+  font-weight: 500;
+  box-shadow: var(--shadow-glow);
+  pointer-events: none;
+}
+
+.assistant-fab-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--accent-alt), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 40px rgba(126, 184, 249, 0.28);
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.assistant-fab:hover .assistant-fab-btn {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+.assistant-fab svg {
+  width: 25px;
+  height: 25px;
+  fill: #080b12;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .nav-container {
+    display: block;
+    position: relative;
+    padding-right: 118px;
+  }
+
+  .nav-gutter-start { display: none; }
+
+  .nav-menu-slot {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-actions {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div id="ambient" aria-hidden="true">
+  <div class="aurora aurora-a"></div>
+  <div class="aurora aurora-b"></div>
+  <div class="aurora aurora-c"></div>
+</div>
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<nav class="navbar" aria-label="Primary">
+  <div class="nav-container">
+    <div class="nav-gutter-start" aria-hidden="true"></div>
+    <div class="nav-menu-slot">
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-actions">
+      <a class="btn-nav-resume" href="CV-KIRAN.pdf" download>Download resume</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <p class="hero-greeting">Hello, I'm</p>
+    <h1>Venkata Naga Kiran Katari</h1>
+    <p class="hero-role">Cybersecurity Graduate Student | Ethical Hacking | Network Security</p>
+    <p class="hero-tagline">Bridging hands-on labs, intrusion detection research, and practical defensive fundamentals into one focused path.</p>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p class="section-lead">Background, focus areas, and how I approach security work.</p>
+  <p>
+    I am a technically motivated professional with hands-on experience in networking,
+    cybersecurity fundamentals, and systems support.
+  </p>
+  <p>
+    I have a strong interest in enterprise networking, infrastructure security, and automation.
+    I enjoy understanding how systems work end-to-end and improving them through better design,
+    monitoring, and security practices. Alongside my professional experience, I continuously
+    build projects and labs to strengthen my real-world skills.
+  </p>
+  <p>
+    I am currently pursuing a Master’s degree in Computer Science at Rowan University while
+    complementing my education with industry certifications and practical cybersecurity projects.
+  </p>
+  <p>📍 Based in Philadelphia, PA</p>
+</section>
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <p class="section-lead">Languages, platforms, and security tooling I use in projects and labs.</p>
+  <div class="skills">
+    <div class="card">Python</div>
+    <div class="card">Java</div>
+    <div class="card">C</div>
+    <div class="card">SQL</div>
+    <div class="card">Linux</div>
+    <div class="card">Network Security</div>
+    <div class="card">Ethical Hacking</div>
+    <div class="card">SIEM / SOC</div>
+    <div class="card">Burp Suite</div>
+    <div class="card">Nmap</div>
+    <div class="card">Wireshark</div>
+    <div class="card">Splunk</div>
+    <div class="card">Microsoft Sentinel</div>
+    <div class="card">OWASP</div>
+    <div class="card">Incident Response</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p class="section-lead">Research, awareness builds, and full-stack work that shaped my security perspective.</p>
+
+  <div class="project-card">
+    <h3>Enhancing IoT Security Through Anomaly Detection and Intrusion Prevention in Cyber-Physical Systems</h3>
+    <p>
+      Developed an advanced intrusion detection system to enhance IoT security in cyber-physical environments using
+      supervised deep learning models including CNN, LSTM, and DNN architectures. The system was evaluated on
+      benchmark datasets such as KDDCup99, NSL-KDD, and UNSW-NB15, achieving accuracies of 100%, 95.1%, and
+      87.4% respectively. A Flask-based web application was deployed to demonstrate real-time anomaly detection with
+      standardized data preprocessing. This research was published in the Proceedings of ICCIET 2024 by Atlantis Press.
+    </p>
+  </div>
+
+  <div class="project-card">
+    <h3>Behavior-Based Ransomware Detection Using File System Monitoring</h3>
+    <p>
+      Developed a ransomware detection system that monitors file system activities to identify abnormal behavior such
+      as rapid file encryption and unauthorized access patterns. The system uses rule-based and anomaly detection techniques
+      to trigger alerts before significant damage occurs. Implemented using Python and tested in a virtual lab environment
+      using VirtualBox. This project highlights practical knowledge of malware behavior and endpoint security mechanisms.
+    </p>
+  </div>
+
+  <div class="project-card">
+    <h3>Keylogger – Capturing Keystrokes</h3>
+    <p>
+      Developed a proof-of-concept keylogger application capable capturing keyboard input events through a graphical
+      user interface. This project was created for cybersecurity awareness and educational demonstrations, highlighting
+      how keystroke monitoring works and emphasizing the importance of endpoint protection and ethical security practices.
+    </p>
+  </div>
+
+  <div class="project-card">
+    <h3>Student Database Management System</h3>
+    <p>
+      Developed a web-based Student Database Management System (SDMS) using PHP, HTML, CSS, and MySQL to
+      manage student records, faculty information, attendance tracking, exam data, and registration details. Implemented
+      full CRUD operations across relational tables and incorporated views, stored procedures, functions, and triggers to
+      maintain data consistency and integrity.
+    </p>
+  </div>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <p class="section-lead">Formal learning that backs up hands-on lab work.</p>
+
+  <div class="cert-card">
+    <h3>Microsoft Azure Fundamentals (AZ-900)</h3>
+    <p>
+      Microsoft certification demonstrating foundational knowledge of cloud concepts,
+      Azure services, security, compliance, pricing, and cloud architecture.
+    </p>
+  </div>
+
+  <div class="cert-card">
+    <h3>Introduction to Cyber Security – Coursera</h3>
+    <p>
+      Completed foundational cybersecurity training covering threat landscapes,
+      network security fundamentals, basic cryptography concepts, and security best practices.
+    </p>
+  </div>
+
+  <div class="cert-card">
+    <h3>CompTIA Security+ (In Progress)</h3>
+    <p>
+      Currently preparing for the CompTIA Security+ certification focusing on security
+      operations, risk management, threat detection, incident response, and network security.
+    </p>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="contact-heading">
+  <h2 id="contact-heading">Get in touch</h2>
+
+  <div class="contact-layout">
+    <div class="contact-col contact-col-details">
+      <p class="contact-intro">
+        Interested in collaborating on security projects, research, or have an opportunity? Feel free to reach out.
+      </p>
+
+      <ul class="contact-list" role="list">
+        <li class="contact-row">
+          <span class="contact-row-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <div class="contact-row-body">
+            <span class="contact-row-label">Email</span>
+            <a class="contact-mail" href="mailto:kirankatari99@gmail.com">kirankatari99@gmail.com</a>
+          </div>
+        </li>
+
+        <li class="contact-row">
+          <span class="contact-row-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div class="contact-row-body">
+            <span class="contact-row-label">Location</span>
+            <p class="contact-plain">Philadelphia, PA</p>
+          </div>
+        </li>
+
+        <li class="contact-row">
+          <span class="contact-row-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </span>
+          <div class="contact-row-body">
+            <span class="contact-row-label">LinkedIn</span>
+            <a class="contact-link-out" href="https://www.linkedin.com/in/venkata-naga-kiran-katari-b094361a9" target="_blank" rel="noopener noreferrer">linkedin.com/in/venkata-naga-kiran-katari</a>
+          </div>
+        </li>
+
+        <li class="contact-row">
+          <span class="contact-row-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.398 3.003-.403 1.02.005 2.047.137 3.006.403 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </span>
+          <div class="contact-row-body">
+            <span class="contact-row-label">GitHub</span>
+            <a class="contact-link-out" href="https://github.com/kirankatari" target="_blank" rel="noopener noreferrer">github.com/kirankatari</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="contact-col contact-col-form">
+      <form class="contact-form" id="contactForm" action="#" method="get" novalidate>
+        <div>
+          <label for="contactName">Name</label>
+          <input id="contactName" name="name" type="text" autocomplete="name" placeholder="Your name">
+        </div>
+        <div>
+          <label for="contactEmail">Email</label>
+          <input id="contactEmail" name="email" type="email" autocomplete="email" placeholder="your.email@example.com">
+        </div>
+        <div>
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="message" placeholder="Your message…"></textarea>
+        </div>
+        <button type="submit" class="btn-contact-send">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Venkata Naga Kiran Katari | Cybersecurity Portfolio
+</footer>
+
+<div id="assistantBackdrop" class="assistant-backdrop" aria-hidden="true"></div>
+
+<div class="assistant-stack">
+  <div id="chatWidget" class="chat-widget" role="dialog" aria-modal="true" aria-labelledby="chat-widget-title-el" aria-hidden="true" hidden>
+    <div class="chat-widget-header">
+      <h3 class="chat-widget-title" id="chat-widget-title-el">Portfolio assistant</h3>
+      <p class="chat-widget-sub">Ask about education, skills, certifications, projects—answered by your server at <code>/api/chat</code>.</p>
+      <button type="button" class="chat-widget-close" id="chatWidgetClose" aria-label="Close chat">&times;</button>
+    </div>
+    <div class="chat-widget-messages" id="chatMessages" role="log" aria-live="polite"></div>
+    <form class="chat-widget-form" id="chatWidgetForm">
+      <label for="chatWidgetInput" class="visually-hidden">Your question</label>
+      <textarea id="chatWidgetInput" rows="1" placeholder="Type a question…" autocomplete="off"></textarea>
+      <button type="submit" id="chatWidgetSend">Send</button>
+    </form>
+  </div>
+
+  <button type="button" id="chatFabToggle" class="assistant-fab" aria-label="Open AI assistant chat" title="Chat" aria-expanded="false" aria-controls="chatWidget">
+    <span class="assistant-fab-chat-bubble">Ask me anything</span>
+    <span class="assistant-fab-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9.414l-3.707 3.707A1 1 0 0 1 4 20v-3H4a2 2 0 0 1-2-2V5zm2 0v10h2v3.086l2.086-2.086H18V5H6zm3 3h6v2H9V8zm0 4h8v2H9v-2z"/></svg>
+    </span>
+  </button>
+</div>
+
+<script>
+const CHAT_FALLBACK =
+  "Sorry — I can’t reach the assistant right now. Please try again in a minute, or email kirankatari99@gmail.com.";
+
+function pickAssistantText(data) {
+  if (!data || typeof data !== "object") return null;
+  if (typeof data.reply === "string" && data.reply.trim()) return data.reply;
+  if (typeof data.answer === "string" && data.answer.trim()) return data.answer;
+  if (typeof data.error === "string" && data.error.trim()) return data.error;
+  return null;
+}
+
+async function fetchPortfolioAssistantReply(message) {
+  try {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message })
+    });
+    let data = null;
+    try {
+      data = await response.json();
+    } catch (_) { /* empty or non-JSON */ }
+    const text = pickAssistantText(data);
+    if (text) return { ok: true, reply: text };
+    return { ok: false, reply: CHAT_FALLBACK };
+  } catch (_) {
+    return { ok: false, reply: CHAT_FALLBACK };
+  }
+}
+
+/* ---------- Floating chat widget ---------- */
+const chatWidget = document.getElementById("chatWidget");
+const chatFabToggle = document.getElementById("chatFabToggle");
+const chatWidgetClose = document.getElementById("chatWidgetClose");
+const chatMessages = document.getElementById("chatMessages");
+const chatWidgetForm = document.getElementById("chatWidgetForm");
+const chatWidgetInput = document.getElementById("chatWidgetInput");
+const chatWidgetSend = document.getElementById("chatWidgetSend");
+const assistantBackdrop = document.getElementById("assistantBackdrop");
+
+function appendChatBubble(role, text, extraClass) {
+  if (!chatMessages) return;
+  const row = document.createElement("div");
+  row.className = "chat-msg chat-msg-" + role + (extraClass ? " " + extraClass : "");
+  const bubble = document.createElement("div");
+  bubble.className = "chat-msg-bubble";
+  bubble.textContent = text;
+  row.appendChild(bubble);
+  chatMessages.appendChild(row);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function removeTypingRow() {
+  const t = chatMessages && chatMessages.querySelector(".chat-msg-typing");
+  if (t) t.remove();
+}
+
+function setChatOpen(open) {
+  if (!chatWidget || !chatFabToggle) return;
+  chatWidget.hidden = !open;
+  chatWidget.classList.toggle("is-open", open);
+  chatWidget.setAttribute("aria-hidden", open ? "false" : "true");
+  chatFabToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  chatFabToggle.setAttribute("aria-label", open ? "Close AI assistant chat" : "Open AI assistant chat");
+  if (assistantBackdrop) {
+    assistantBackdrop.classList.toggle("is-visible", open);
+    assistantBackdrop.setAttribute("aria-hidden", open ? "false" : "true");
+  }
+  if (open) {
+    if (chatMessages && chatMessages.children.length === 0) {
+      appendChatBubble(
+        "bot",
+        "Hi — I answer questions about Kiran’s background using this portfolio. What would you like to know?",
+        "chat-msg-hint"
+      );
+    }
+    setTimeout(() => chatWidgetInput && chatWidgetInput.focus(), 180);
+  }
+}
+
+if (chatFabToggle && chatWidget) {
+  chatFabToggle.addEventListener("click", () => setChatOpen(!chatWidget.classList.contains("is-open")));
+}
+if (chatWidgetClose) {
+  chatWidgetClose.addEventListener("click", () => setChatOpen(false));
+}
+if (assistantBackdrop) {
+  assistantBackdrop.addEventListener("click", () => setChatOpen(false));
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && chatWidget && chatWidget.classList.contains("is-open")) {
+    setChatOpen(false);
+  }
+});
+
+if (chatWidgetForm && chatWidgetInput && chatWidgetSend) {
+  chatWidgetForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const message = chatWidgetInput.value.trim();
+    if (!message) return;
+    appendChatBubble("user", message);
+    chatWidgetInput.value = "";
+    chatWidgetInput.style.height = "auto";
+    removeTypingRow();
+    appendChatBubble("bot", "Thinking…", "chat-msg-typing");
+    chatWidgetSend.disabled = true;
+    const { reply } = await fetchPortfolioAssistantReply(message);
+    removeTypingRow();
+    appendChatBubble("bot", reply);
+    chatWidgetSend.disabled = false;
+    chatWidgetInput.focus();
+  });
+
+  chatWidgetInput.addEventListener("input", function () {
+    this.style.height = "auto";
+    this.style.height = Math.min(this.scrollHeight, 120) + "px";
+  });
+}
+
+/* Contact form → opens default mail client (mailto:) with prefilled subject & body */
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const to = "kirankatari99@gmail.com";
+    const nameEl = contactForm.elements.namedItem("name");
+    const emailEl = contactForm.elements.namedItem("email");
+    const messageEl = contactForm.elements.namedItem("message");
+    const name = (nameEl && nameEl.value) ? nameEl.value.trim() : "";
+    const visitorEmail = (emailEl && emailEl.value) ? emailEl.value.trim() : "";
+    const message = (messageEl && messageEl.value) ? messageEl.value.trim() : "";
+
+    const subject = `Portfolio inquiry${name ? ` from ${name}` : ""}`;
+    const bodyParts = [];
+    if (message) bodyParts.push(message);
+    bodyParts.push("");
+    bodyParts.push("—");
+    if (name) bodyParts.push(`Name: ${name}`);
+    if (visitorEmail) bodyParts.push(`Reply email: ${visitorEmail}`);
+    const body = bodyParts.join("\n");
+
+    const url = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = url;
+  });
+}
+</script>
+</body>
+</html>

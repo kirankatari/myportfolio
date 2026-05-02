@@ -1,0 +1,6 @@
+---
+pid: 41016
+cwd: |
+  C:\Users\kiran
+---
+PS C:\Users\kiran>
