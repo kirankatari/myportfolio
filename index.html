@@ -242,7 +242,13 @@ body {
 .hero {
   position: relative;
   min-height: 100vh;
-  background-image: url("images/cyber-bg.jpg");
+  background-color: var(--bg-deep);
+  /* Layered gradients — no external image required; optional: add images/cyber-bg.jpg as first layer */
+  background-image:
+    radial-gradient(ellipse 130% 85% at 50% 18%, rgba(42, 63, 115, 0.55) 0%, transparent 58%),
+    radial-gradient(ellipse 95% 75% at 85% 55%, rgba(74, 54, 112, 0.42) 0%, transparent 52%),
+    radial-gradient(ellipse 70% 55% at 12% 72%, rgba(31, 79, 92, 0.28) 0%, transparent 50%),
+    linear-gradient(168deg, #0b1020 0%, #06070c 48%, #06070c 100%);
   background-size: cover;
   background-position: center;
   display: flex;
