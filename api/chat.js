@@ -1,6 +1,6 @@
 /**
  * Vercel serverless: POST /api/chat
- * Logic: ../lib/portfolio-assistant.js (Gemini if GEMINI_API_KEY / GOOGLE_AI_API_KEY, else OpenAI).
+ * Logic: ../lib/portfolio-assistant.js (GOOGLE_AI_API_KEY, else OpenAI).
  */
 
 const { generateAssistantReply } = require("../lib/portfolio-assistant");
@@ -46,7 +46,7 @@ async function handleChat(req, res) {
     if (result.missingKey) {
       return res.status(200).json(
         safeReply(
-          "The assistant is not configured. Add GEMINI_API_KEY (aistudio.google.com/apikey) or OPENAI_API_KEY in Vercel, then Redeploy. kirankatari99@gmail.com"
+          "The assistant is not configured. Add OPENAI_API_KEY in Vercel, then Redeploy. kirankatari99@gmail.com"
         )
       );
     }
