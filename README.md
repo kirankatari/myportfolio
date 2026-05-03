@@ -44,6 +44,25 @@ This README doubles as **documentation for CS 07695 / CS 10342 — Web Server Pl
 
 **Course deadlines (from syllabus materials):** confirm exact Canvas time on your course page; slides reference **May 3, 2026** and **April 28** in different places — use whatever your Canvas assignment states.
 
+### Step-by-step deploy (Ubuntu VPS)
+
+Use **`deployment/UBUNTU-DEPLOY.md`** — copy-paste commands for UFW, Nginx, Certbot, PHP **or** Node, and a `curl` test of **`POST /api/chat`**.
+
+**Short printable list:** `deployment/YOUR-CHECKLIST.md`
+
+**Node helpers in this repo:** `server/.env.example` (copy to `server/.env` on the server only), `deployment/portfolio-node.service` (systemd unit template).
+
+### What only you can do (not possible from GitHub)
+
+| Task | Notes |
+|------|--------|
+| Buy / log into VPS and domain | Provider accounts and payment |
+| DNS A/AAAA records | At your registrar |
+| SSH into server and run commands | Follow `deployment/UBUNTU-DEPLOY.md` |
+| Create OpenAI key & add to `config.local.php` or `server/.env` | Never commit secrets |
+| Canvas submission | Your student login |
+| LinkedIn post | Your profile; use hashtags from rubric |
+
 ---
 
 ## Tech stack manifest (fill versions after deploy)

@@ -1,0 +1,25 @@
+# systemd unit — Node backend behind Nginx (see deployment/nginx-site-example.conf)
+#
+# Install:
+#   sudo cp deployment/portfolio-node.service /etc/systemd/system/portfolio-node.service
+#   sudo nano /etc/systemd/system/portfolio-node.service   # fix User, paths
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now portfolio-node
+#
+# Replace YOUR_LINUX_USER and /var/www/portfolio with your values.
+
+[Unit]
+Description=Portfolio Express (POST /api/chat + static files)
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_LINUX_USER
+WorkingDirectory=/var/www/portfolio/server
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
