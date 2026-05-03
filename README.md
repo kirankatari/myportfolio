@@ -46,7 +46,7 @@ This README doubles as **documentation for CS 07695 / CS 10342 — Web Server Pl
 
 ### Launch on Vercel (no VPS)
 
-If you use **Vercel** + a custom domain, add **`OPENAI_API_KEY`** in the project **Environment Variables**, then redeploy. The chat calls **`POST /api/chat`**, implemented by **`api/chat.js`** (serverless). Step-by-step: **`deployment/VERCEL-LAUNCH.md`**.
+If you use **Vercel** + a custom domain, add **`GEMINI_API_KEY`** (Google AI Studio) or **`OPENAI_API_KEY`** in **Environment Variables**, then redeploy. The chat uses **`POST /api/chat`** via **`api/chat.js`** + **`lib/portfolio-assistant.js`** (Gemini is used if a Gemini key is set). Steps: **`deployment/VERCEL-LAUNCH.md`**.
 
 ### Step-by-step deploy (Ubuntu VPS)
 
