@@ -16,6 +16,7 @@ const COFFEE_BREAK_MESSAGE =
 $apiKey = getenv('OPENAI_API_KEY');
 
 // Fallback for local testing (optional)
+/*
 if (!$apiKey) {
     $configPath = __DIR__ . '/config.local.php';
     if (is_readable($configPath)) {
@@ -24,7 +25,7 @@ if (!$apiKey) {
             $apiKey = trim((string) $cfg['openai_api_key']);
         }
     }
-}
+}*/
 
 function sendJson(array $data, int $code = 200): void
 {
@@ -114,9 +115,13 @@ if ($conversation === []) {
         'error' => 'Please enter a question about skills, projects, education, or certifications.',
     ], 422);
 }
-
+/*
 if ($apiKey === '' || str_starts_with($apiKey, 'sk-proj-PASTE')) {
     error_log('Portfolio assistant: add api/config.local.php with openai_api_key.');
+    sendCoffeeBreak();
+}*/
+if ($apiKey === '') {
+    error_log('Portfolio assistant: Missing OPENAI_API_KEY environment variable.');
     sendCoffeeBreak();
 }
 
