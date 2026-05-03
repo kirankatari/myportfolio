@@ -44,6 +44,10 @@ This README doubles as **documentation for CS 07695 / CS 10342 — Web Server Pl
 
 **Course deadlines (from syllabus materials):** confirm exact Canvas time on your course page; slides reference **May 3, 2026** and **April 28** in different places — use whatever your Canvas assignment states.
 
+### Launch on Vercel (no VPS)
+
+If you use **Vercel** + a custom domain, add **`OPENAI_API_KEY`** in the project **Environment Variables**, then redeploy. The chat calls **`POST /api/chat`**, implemented by **`api/chat.js`** (serverless). Step-by-step: **`deployment/VERCEL-LAUNCH.md`**.
+
 ### Step-by-step deploy (Ubuntu VPS)
 
 Use **`deployment/UBUNTU-DEPLOY.md`** — copy-paste commands for UFW, Nginx, Certbot, PHP **or** Node, and a `curl` test of **`POST /api/chat`**.
