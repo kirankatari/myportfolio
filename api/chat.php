@@ -13,12 +13,16 @@ const OPENAI_MODEL = 'gpt-4o-mini';
 const COFFEE_BREAK_MESSAGE =
     "I'm taking a short break. Please try again in a minute, or email kirankatari99@gmail.com.";
 
-$configPath = __DIR__ . '/config.local.php';
-$apiKey = '';
-if (is_readable($configPath)) {
-    $cfg = require $configPath;
-    if (is_array($cfg) && !empty($cfg['openai_api_key'])) {
-        $apiKey = trim((string) $cfg['openai_api_key']);
+$apiKey = getenv('OPENAI_API_KEY');
+
+// Fallback for local testing (optional)
+if (!$apiKey) {
+    $configPath = __DIR__ . '/config.local.php';
+    if (is_readable($configPath)) {
+        $cfg = require $configPath;
+        if (is_array($cfg) && !empty($cfg['openai_api_key'])) {
+            $apiKey = trim((string) $cfg['openai_api_key']);
+        }
     }
 }
 
