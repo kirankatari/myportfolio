@@ -1,25 +1,9 @@
 /**
  * Vercel serverless: POST /api/chat
- * Set OPENAI_API_KEY in Vercel → Project → Settings → Environment Variables.
+ * Logic: ../lib/portfolio-assistant.js (Gemini if GEMINI_API_KEY / GOOGLE_AI_API_KEY, else OpenAI).
  */
 
-const SYSTEM_PROMPT = `You are the portfolio assistant for Venkata Naga Kiran Katari. You ONLY answer using the facts below and reasonable general cybersecurity vocabulary. If asked for something not covered here, say you do not have that detail on the public portfolio and suggest email kirankatari99@gmail.com or LinkedIn.
-
-FACTS (public portfolio):
-- Role focus: Cybersecurity graduate student; ethical hacking; network security; Philadelphia, PA.
-- Education: M.S. Computer Science in progress at Rowan University; complements with certs and hands-on projects.
-- Technical skills (representative): Python, Java, C, SQL, Linux, network security, ethical hacking, SIEM/SOC, Burp Suite, Nmap, Wireshark, Splunk, Microsoft Sentinel, OWASP, incident response.
-- Projects:
-  1) IoT intrusion detection / anomaly detection with CNN, LSTM, DNN; datasets KDDCup99, NSL-KDD, UNSW-NB15; Flask demo; published ICCIET 2024 (Atlantis Press).
-  2) Behavior-based ransomware detection via file system monitoring; rule + anomaly detection; Python; VirtualBox lab; malware behavior / endpoint security.
-  3) Educational keylogger PoC with GUI for awareness (ethical / educational context only).
-  4) Student Database Management System: PHP, HTML, CSS, MySQL; CRUD, views, procedures, triggers.
-- Certifications: Microsoft Azure Fundamentals AZ-900; Coursera Intro to Cyber Security; CompTIA Security+ (in progress).
-- Contact email on site: kirankatari99@gmail.com
-
-When asked about skills, tools, or technologies, summarize from the technical skills list and tie them to projects where relevant (e.g., Python for ransomware detection lab, deep learning for IoT IDS). If asked for a skill not listed, say it is not listed on this portfolio.
-
-Tone: professional, concise, first person when describing Kiran ("I") is OK when summarizing background. Never invent employers, dates, or credentials not listed. Never give instructions to harm systems or break laws.`;
+const { generateAssistantReply } = require("../lib/portfolio-assistant");
 
 function safeReply(text) {
   return { reply: String(text || "").slice(0, 8000) };
@@ -57,76 +41,19 @@ async function handleChat(req, res) {
     return res.status(200).json(safeReply("Please type a question about my background, skills, or projects."));
   }
 
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
-    return res.status(200).json(
-      safeReply(
-        "The assistant is not configured yet (missing API key on the host). Please email kirankatari99@gmail.com."
-      )
-    );
-  }
-
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          { role: "system", content: SYSTEM_PROMPT },
-          { role: "user", content: message }
-        ],
-        max_tokens: 700,
-        temperature: 0.45
-      })
-    });
-
-    const rawText = await response.text();
-    let data;
-    try {
-      data = JSON.parse(rawText);
-    } catch {
+    const result = await generateAssistantReply(message);
+    if (result.missingKey) {
       return res.status(200).json(
-        safeReply("The assistant hit an unexpected response. Please try again or email me directly.")
+        safeReply(
+          "The assistant is not configured. Add GEMINI_API_KEY (aistudio.google.com/apikey) or OPENAI_API_KEY in Vercel, then Redeploy. kirankatari99@gmail.com"
+        )
       );
     }
-
-    if (!response.ok) {
-      const errObj = data && data.error && typeof data.error === "object" ? data.error : null;
-      const errType = errObj && errObj.type ? String(errObj.type) : "";
-      const errCode = errObj && errObj.code ? String(errObj.code) : "";
-      console.error("OpenAI error:", response.status, errType, errCode, errObj && errObj.message);
-
-      let userHint =
-        "OpenAI returned an error. Check Vercel → Deployments → this deployment → Functions → api/chat logs.";
-      if (response.status === 401 || errType === "invalid_request_error" && errCode === "invalid_api_key") {
-        userHint =
-          "The OpenAI API key is invalid or revoked. In Vercel → Settings → Environment Variables, replace OPENAI_API_KEY with a new key from platform.openai.com, then Redeploy.";
-      } else if (response.status === 429) {
-        userHint =
-          "OpenAI rate limit or quota exceeded. Wait a minute, or add billing / usage limits at platform.openai.com, then try again.";
-      } else if (response.status === 402 || errCode === "insufficient_quota" || errType === "insufficient_quota") {
-        userHint =
-          "OpenAI account needs billing or credits (insufficient quota). Add a payment method or buy credits at platform.openai.com, then try again.";
-      } else if (response.status >= 500) {
-        userHint = "OpenAI’s servers had a problem. Try again in a few minutes.";
-      }
-
-      return res.status(200).json(safeReply(`${userHint} You can also email kirankatari99@gmail.com.`));
+    if (!result.ok) {
+      return res.status(200).json(safeReply(`${result.userHint} You can also email kirankatari99@gmail.com.`));
     }
-
-    const reply =
-      data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
-    if (!reply || typeof reply !== "string") {
-      return res.status(200).json(
-        safeReply("I could not generate an answer right now. Please try again or use the contact form.")
-      );
-    }
-
-    return res.status(200).json(safeReply(reply.trim()));
+    return res.status(200).json(safeReply(result.reply));
   } catch (err) {
     console.error("api/chat:", err && err.message ? err.message : err);
     return res.status(200).json(

@@ -11,14 +11,22 @@ Your domain **`venkatangakirantech.xyz`** can stay on Vercel. This repo includes
 
 After the first deploy, **pull the latest `main` from GitHub** (repo includes `api/chat.js`, `vercel.json`, `.vercelignore`) and let Vercel redeploy — otherwise **`POST /api/chat`** can 404 and the chat will show an error.
 
-## 2. Add the API key
+## 2. Add the API key (Gemini or OpenAI)
 
-1. Open the project → **Settings** → **Environment Variables**.
-2. Add:
-   - **Name:** `OPENAI_API_KEY`
-   - **Value:** your secret key from OpenAI (starts with `sk-…`)
-   - **Environments:** Production (and Preview if you want the chat on preview URLs too).
-3. Save, then **Deployments** → open the latest deployment → **⋯** → **Redeploy** (so the new variable is picked up).
+**Option A — Google Gemini (often easier free tier)**  
+1. Open **[Google AI Studio](https://aistudio.google.com/apikey)** → **Create API key**.  
+2. Vercel → **Settings** → **Environment Variables** → add:
+   - **Name:** `GEMINI_API_KEY` (or `GOOGLE_AI_API_KEY`)
+   - **Value:** the key from AI Studio  
+   - **Environments:** Production (+ Preview if you want).  
+3. If the model errors, add **`GEMINI_MODEL`** = `gemini-1.5-flash` and redeploy.
+
+**Option B — OpenAI**  
+- **Name:** `OPENAI_API_KEY` — value from [platform.openai.com](https://platform.openai.com/api-keys).
+
+If **both** are set, **Gemini is used first**.
+
+Save, then **Deployments** → latest → **⋯** → **Redeploy**.
 
 ## 3. Custom domain
 
