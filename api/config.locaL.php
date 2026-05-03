@@ -4,5 +4,5 @@
  * Never commit config.local.php to GitHub.
  */
 return [
-    'openai_api_key' => 'sk-proj-PASTE_YOUR_KEY_HERE',
+    'OPENAI_API_KEY' => 'sk-proj-PASTE_YOUR_KEY_HERE',
 ];
