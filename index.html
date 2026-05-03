@@ -1169,7 +1169,7 @@ const CHAT_FALLBACK =
 
 async function fetchPortfolioAssistantReply(message) {
   try {
-    const response = await fetch("https://myportfolio-git-main-venkatanagakirankataris-projects.vercel.app/api/chat", {
+    const response = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message })
