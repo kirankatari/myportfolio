@@ -43,3 +43,9 @@ You should see JSON with a **`reply`** field.
 
 - **`api/chat.php`** is for traditional **PHP + Nginx** hosting. On Vercel, **`api/chat.js`** is what runs.
 - Do **not** commit real API keys; only set them in the Vercel dashboard.
+
+## Chat says “OpenAI returned an error” or billing / quota
+
+1. Open **platform.openai.com** → **Billing** — add payment method or credits if the account has no balance (API calls are not always free).
+2. **API keys** — create a **new secret key**, copy it exactly into Vercel **`OPENAI_API_KEY`**, then **Redeploy**.
+3. On Vercel: **Deployments** → latest → **Functions** / **Logs** — look for `OpenAI error:` lines (no need to share your key when asking for help).

@@ -95,12 +95,27 @@ async function handleChat(req, res) {
     }
 
     if (!response.ok) {
-      console.error("OpenAI error:", response.status, data && data.error);
-      return res.status(200).json(
-        safeReply(
-          "The assistant is temporarily unavailable. Please try again in a minute or contact kirankatari99@gmail.com."
-        )
-      );
+      const errObj = data && data.error && typeof data.error === "object" ? data.error : null;
+      const errType = errObj && errObj.type ? String(errObj.type) : "";
+      const errCode = errObj && errObj.code ? String(errObj.code) : "";
+      console.error("OpenAI error:", response.status, errType, errCode, errObj && errObj.message);
+
+      let userHint =
+        "OpenAI returned an error. Check Vercel → Deployments → this deployment → Functions → api/chat logs.";
+      if (response.status === 401 || errType === "invalid_request_error" && errCode === "invalid_api_key") {
+        userHint =
+          "The OpenAI API key is invalid or revoked. In Vercel → Settings → Environment Variables, replace OPENAI_API_KEY with a new key from platform.openai.com, then Redeploy.";
+      } else if (response.status === 429) {
+        userHint =
+          "OpenAI rate limit or quota exceeded. Wait a minute, or add billing / usage limits at platform.openai.com, then try again.";
+      } else if (response.status === 402 || errCode === "insufficient_quota" || errType === "insufficient_quota") {
+        userHint =
+          "OpenAI account needs billing or credits (insufficient quota). Add a payment method or buy credits at platform.openai.com, then try again.";
+      } else if (response.status >= 500) {
+        userHint = "OpenAI’s servers had a problem. Try again in a few minutes.";
+      }
+
+      return res.status(200).json(safeReply(`${userHint} You can also email kirankatari99@gmail.com.`));
     }
 
     const reply =
