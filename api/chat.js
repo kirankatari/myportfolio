@@ -42,7 +42,9 @@ async function handleChat(req, res) {
   }
 
   try {
-    const result = await generateAssistantReply(message);
+  console.log("KEY:", process.env.OPENAI_API_KEY ? "FOUND" : "MISSING");
+
+  const result = await generateAssistantReply(message);
     if (result.missingKey) {
       return res.status(200).json(
         safeReply(
