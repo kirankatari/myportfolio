@@ -14,6 +14,8 @@ const COFFEE_BREAK_MESSAGE =
     "I'm taking a short break. Please try again in a minute, or email kirankatari99@gmail.com.";
 
 $apiKey = getenv('OPENAI_API_KEY');
+var_dump(getenv('OPENAI_API_KEY'));
+exit;
 
 // Fallback for local testing (optional)
 /*
