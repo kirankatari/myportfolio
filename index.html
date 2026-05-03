@@ -1177,11 +1177,26 @@ async function fetchPortfolioAssistantReply(message) {
     let data = null;
     try {
       data = await response.json();
-    } catch (_) { /* empty or non-JSON */ }
-    if (!response.ok || !data || typeof data.reply !== "string") {
-      return { ok: false, reply: CHAT_FALLBACK };
+    } catch (_) {
+      /* Vercel may return HTML on 404 — not JSON */
     }
-    return { ok: true, reply: data.reply };
+    if (data && typeof data.reply === "string") {
+      return { ok: true, reply: data.reply };
+    }
+    if (response.status === 404) {
+      return {
+        ok: false,
+        reply:
+          "The chat API is not available on this deployment (404). Redeploy the site from the latest GitHub commit so /api/chat exists, or email kirankatari99@gmail.com."
+      };
+    }
+    if (!response.ok) {
+      return {
+        ok: false,
+        reply: `The assistant returned an error (${response.status}). Try again or email kirankatari99@gmail.com.`
+      };
+    }
+    return { ok: false, reply: CHAT_FALLBACK };
   } catch (_) {
     return { ok: false, reply: CHAT_FALLBACK };
   }

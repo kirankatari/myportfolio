@@ -6,8 +6,10 @@ Your domain **`venkatangakirantech.xyz`** can stay on Vercel. This repo includes
 
 1. Go to [vercel.com](https://vercel.com) and sign in.
 2. **Add New…** → **Project** → **Import** your GitHub repo **`kirankatari/myportfolio`** (or your fork).
-3. **Framework Preset:** *Other* (or leave default; static `index.html` + `api/` is fine).
+3. **Framework Preset:** *Other* (or leave default; static `index.html` + `api/chat.js` is fine).
 4. Click **Deploy**.
+
+After the first deploy, **pull the latest `main` from GitHub** (repo includes `api/chat.js`, `vercel.json`, `.vercelignore`) and let Vercel redeploy — otherwise **`POST /api/chat`** can 404 and the chat will show an error.
 
 ## 2. Add the API key
 

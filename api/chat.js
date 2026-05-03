@@ -25,12 +25,19 @@ function safeReply(text) {
   return { reply: String(text || "").slice(0, 8000) };
 }
 
-module.exports = async (req, res) => {
+async function handleChat(req, res) {
   res.setHeader("Content-Type", "application/json");
 
+  if (req.method === "OPTIONS") {
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    res.setHeader("Access-Control-Max-Age", "86400");
+    return res.status(204).end();
+  }
+
   if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
-    return res.status(405).json({ ...safeReply("Use POST with JSON body { \"message\": \"...\" }."), ok: false });
+    res.setHeader("Allow", "POST, OPTIONS");
+    return res.status(405).json({ ...safeReply('Use POST with JSON body { "message": "..." }.'), ok: false });
   }
 
   let body = req.body;
@@ -113,4 +120,7 @@ module.exports = async (req, res) => {
       )
     );
   }
-};
+}
+
+module.exports = handleChat;
+module.exports.default = handleChat;
